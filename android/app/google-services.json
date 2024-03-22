@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "86765179508",
+    "project_id": "basicapp-5abdf",
+    "storage_bucket": "basicapp-5abdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86765179508:android:41ba8c59d344f2a8c57721",
+        "android_client_info": {
+          "package_name": "com.mustakim.fl.crud.firebase_crud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMua2v818OOC_UsumyHecFArqajDnnyL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
