@@ -12,4 +12,12 @@ class DatabaseMethods {
   Future<Stream<QuerySnapshot>> getEmployeeDetails() async {
     return await FirebaseFirestore.instance.collection("Employee").snapshots();
   }
+
+  Future updateEmployeeDetails(
+      Map<String, dynamic> employeeInfoMap, String id) async {
+    return await FirebaseFirestore.instance
+        .collection("Employee")
+        .doc(id)
+        .update(employeeInfoMap);
+  }
 }
