@@ -56,8 +56,6 @@ class _HomeState extends State<Home> {
                               children: [
                                 // Name
                                 Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       "Name : " + documentSnapshot["Name"],
@@ -66,6 +64,7 @@ class _HomeState extends State<Home> {
                                           fontSize: 20.0,
                                           fontWeight: FontWeight.bold),
                                     ),
+                                    Spacer(),
                                     GestureDetector(
                                       onTap: () {
                                         nameController.text =
@@ -81,7 +80,32 @@ class _HomeState extends State<Home> {
                                         Icons.edit,
                                         color: Colors.orange,
                                       ),
-                                    )
+                                    ),
+                                    SizedBox(
+                                      width: 5.0,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () async {
+                                        await DatabaseMethods()
+                                            .deleteEmployeeDetails(
+                                                documentSnapshot["Id"])
+                                            .then((value) {
+                                          Fluttertoast.showToast(
+                                              msg:
+                                                  "Employee has been deleted successfully",
+                                              toastLength: Toast.LENGTH_SHORT,
+                                              gravity: ToastGravity.BOTTOM,
+                                              timeInSecForIosWeb: 1,
+                                              backgroundColor: Colors.red,
+                                              textColor: Colors.white,
+                                              fontSize: 16.0);
+                                        });
+                                      },
+                                      child: Icon(
+                                        Icons.delete,
+                                        color: Colors.red,
+                                      ),
+                                    ),
                                   ],
                                 ),
                                 // Age
@@ -271,7 +295,7 @@ class _HomeState extends State<Home> {
                             Fluttertoast.showToast(
                                 msg: "Employee has been updated successfully",
                                 toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
+                                gravity: ToastGravity.BOTTOM,
                                 timeInSecForIosWeb: 1,
                                 backgroundColor: Colors.green,
                                 textColor: Colors.white,

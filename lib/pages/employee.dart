@@ -133,7 +133,7 @@ class _EmployeeState extends State<Employee> {
                       Fluttertoast.showToast(
                           msg: "Employee has been added successfully",
                           toastLength: Toast.LENGTH_SHORT,
-                          gravity: ToastGravity.CENTER,
+                          gravity: ToastGravity.BOTTOM,
                           timeInSecForIosWeb: 1,
                           backgroundColor: Colors.green,
                           textColor: Colors.white,
